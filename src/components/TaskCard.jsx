@@ -1,11 +1,11 @@
-import { IconTrash } from "../assets/icons";
-import { IconHouse } from "../assets/icons";
-import { IconBill } from "../assets/icons";
-import { IconShop } from "../assets/icons";
-import { IconOther } from "../assets/icons";
-import { IconGarden } from "../assets/icons";
-import { IconCheck } from "../assets/icons";
-import { IconUnCheck } from "../assets/icons";
+import { IconTrash } from "../assets/icons2";
+import { IconHouse } from "../assets/icons2";
+import { IconBill } from "../assets/icons2";
+import { IconShop } from "../assets/icons2";
+import { IconOther } from "../assets/icons2";
+import { IconGarden } from "../assets/icons2";
+import { IconCheck } from "../assets/icons2";
+import { IconUnCheck } from "../assets/icons2";
 import { tasks } from "../reducers/tasksSlice";
 import "./taskCard.css";
 
