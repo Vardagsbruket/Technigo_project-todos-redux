@@ -46,7 +46,10 @@ export const TaskCard = ({
       <div className="todoCardHeader">
         {getCategory(category)}
         <span className="todoCardName">{name}</span>
-        <span className="todoCardIsDone">
+        <span
+          className="todoCardIsDone"
+          onClick={() => dispatch(tasks.actions.handleIsDone(createdDate))}
+        >
           {isDone ? <IconUnCheck /> : <IconCheck />}
         </span>
       </div>
