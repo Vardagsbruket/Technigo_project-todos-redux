@@ -1,20 +1,17 @@
 // Example from instructions pasted below
 
-import { Provider } from "react-redux";
-import store from "./store";
-import { tasks } from "./reducers/tasksSlice";
+import { useSelector } from "react-redux";
 import { TodoList } from "./components/TodoList";
 import { AddTask } from "./components/AddTask";
 import { Header } from "./components/Header";
-import { useSelector } from "react-redux";
 
 export const App = () => {
-  //const isOpen = useSelector((state) => state.model.isOpen);
+  const isOpen = useSelector((state) => state.model.isOpen);
   return (
     <div>
-      {/* {isOpen && <AddTask />} */}
+      {isOpen && <AddTask />}
       <Header />
-      <AddTask />
+      {/* <AddTask /> */}
       <TodoList />
     </div>
   );
