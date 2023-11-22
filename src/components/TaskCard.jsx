@@ -7,7 +7,7 @@ import { IconGarden } from "../assets/icons2";
 import { IconCheck } from "../assets/icons2";
 import { IconUnCheck } from "../assets/icons2";
 import { tasks } from "../reducers/tasksSlice";
-import "./taskCard.css";
+import "./TaskCard.css";
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
