@@ -1,4 +1,4 @@
-import React from "react";
+import "./taskCard.css";
 
 export const TaskCard = ({
   createdDate,
@@ -9,18 +9,18 @@ export const TaskCard = ({
   deadline,
 }) => {
   return (
-    <div>
-      <div>
-        <span>{category}</span>
-        <span>{name}</span>
-        <span>{isDone}</span>
+    <div className="todoCard">
+      <div className="todoCardHeader">
+        <span className="todoCardCategory">{category}</span>
+        <span className="todoCardName">{name}</span>
+        <span className="todoCardIsDone">{isDone}</span>
       </div>
-      <div>{comment}</div>
-      <div>
+      <div className="todoCardComment">{comment}</div>
+      <div className="todoCardInfo">
         <div>
-          <button>Remove</button>
+          <button className="todoCardRemove">Remove</button>
         </div>
-        <div>
+        <div className="todoCardDateInfo text-small">
           <span>Deadline:{deadline}</span>
           <span>Date:{createdDate}</span>
         </div>

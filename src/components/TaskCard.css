@@ -1,0 +1,30 @@
+.todoCard {
+  background-color: var(--pure-white);
+  /* padding: 1rem; */
+  border-radius: 4px;
+  flex-basis: calc(33% - 2rem);
+}
+
+.todoCardHeader {
+  border-bottom: 1px solid var(--soft-black);
+  padding: 0.5rem 1rem;
+}
+
+.todoCardName {
+  font-weight: 500;
+}
+
+.todoCardComment {
+  padding: 0.5rem 1rem;
+}
+
+.todoCardInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.todoCardDateInfo span:first-child {
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,10 @@
+main {
+  padding: 2rem 100px;
+}
+
+.todoList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
