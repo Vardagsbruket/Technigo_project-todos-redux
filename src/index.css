@@ -4,6 +4,8 @@
   --main: #f1c40f;
   --black: #110e01;
   --soft-black: #312803;
+  --soft-main: #fcf3d0;
+  --softest-main: #927608;
 }
 
 *,
@@ -16,7 +18,7 @@
 }
 
 html {
-  font-size: clamp(16px, 1vw, 24px);
+  font-size: clamp(16px, 1vw, 20px);
 }
 
 body {

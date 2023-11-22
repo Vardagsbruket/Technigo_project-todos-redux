@@ -1,13 +1,21 @@
 .todoCard {
   background-color: var(--pure-white);
-  /* padding: 1rem; */
-  border-radius: 4px;
-  flex-basis: calc(33% - 2rem);
+  border: 1px solid var(--softest-main);
+  min-width: 350px;
+  flex: 1;
 }
 
 .todoCardHeader {
-  border-bottom: 1px solid var(--soft-black);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--soft-main);
   padding: 0.5rem 1rem;
+}
+
+.todoCardHeader svg {
+  height: 1rem;
+  width: auto;
 }
 
 .todoCardName {
@@ -27,4 +35,10 @@
 
 .todoCardDateInfo span:first-child {
   margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 1178px) {
+  .todoCard:last-of-type {
+    max-width: calc(33% - 1rem);
+  }
 }
