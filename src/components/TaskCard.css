@@ -1,8 +1,11 @@
 .todoCard {
   background-color: var(--pure-white);
-  border: 1px solid var(--softest-main);
+  /* border: 1px solid var(--softest-main); */
   min-width: 350px;
   flex: 1;
+  /* box-shadow: 10px 1px 2px var(--softest-main); */
+  border-right: 2px solid var(--softest-main);
+  border-bottom: 2px solid var(--softest-main);
 }
 
 .todoCardHeader {
@@ -14,12 +17,18 @@
 }
 
 .todoCardHeader svg {
-  height: 1rem;
+  height: 1.5rem;
   width: auto;
+  fill: var(--softest-main);
 }
 
 .todoCardName {
   font-weight: 500;
+}
+
+.todoCardIsDone {
+  margin-left: auto;
+  cursor: pointer;
 }
 
 .todoCardComment {
@@ -37,8 +46,29 @@
   margin-right: 0.5rem;
 }
 
+.todoCardRemove {
+  cursor: pointer;
+}
+.todoCardRemove svg {
+  height: 1.5rem;
+}
+
+@media screen and (min-width: 796px) {
+  .todoCard:last-of-type {
+    max-width: calc(50% - 1rem);
+  }
+
+  .todoCard:first-of-type {
+    max-width: calc(50% - 1rem);
+  }
+}
+
 @media screen and (min-width: 1178px) {
   .todoCard:last-of-type {
+    max-width: calc(33% - 1rem);
+  }
+
+  .todoCard:first-of-type {
     max-width: calc(33% - 1rem);
   }
 }

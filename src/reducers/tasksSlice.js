@@ -42,5 +42,12 @@ const initialState = {
 export const tasks = createSlice({
   name: "tasks",
   initialState,
-  reducer: {},
+  reducers: {
+    removeTask: (state, { payload }) => {
+      const filteredList = state.tasksList.filter(
+        (task) => task.createdDate !== payload
+      );
+      state.tasksList = filteredList;
+    },
+  },
 });

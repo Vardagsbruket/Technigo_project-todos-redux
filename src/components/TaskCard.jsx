@@ -5,7 +5,12 @@ import { IconShop } from "../assets/icons";
 import { IconOther } from "../assets/icons";
 import { IconGarden } from "../assets/icons";
 import { IconCheck } from "../assets/icons";
+import { IconUnCheck } from "../assets/icons";
+import { tasks } from "../reducers/tasksSlice";
 import "./taskCard.css";
+
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export const TaskCard = ({
   createdDate,
@@ -15,6 +20,8 @@ export const TaskCard = ({
   isDone,
   deadline,
 }) => {
+  const dispatch = useDispatch();
+  const taskList = useSelector((state) => state.tasks.tasksList);
   const getCategory = () => {
     switch (category) {
       case "house":
@@ -39,12 +46,17 @@ export const TaskCard = ({
       <div className="todoCardHeader">
         {getCategory(category)}
         <span className="todoCardName">{name}</span>
-        <span className="todoCardIsDone">{isDone}</span>
+        <span className="todoCardIsDone">
+          {isDone ? <IconUnCheck /> : <IconCheck />}
+        </span>
       </div>
       <div className="todoCardComment">{comment}</div>
       <div className="todoCardInfo">
         <div>
-          <span className="todoCardRemove">
+          <span
+            onClick={() => dispatch(tasks.actions.removeTask(createdDate))}
+            className="todoCardRemove"
+          >
             <IconTrash />
           </span>
         </div>
