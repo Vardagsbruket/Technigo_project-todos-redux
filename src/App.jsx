@@ -1,19 +1,15 @@
 // Example from instructions pasted below
 
 import { Provider } from "react-redux";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import store from "./store";
+
 import { tasks } from "./reducers/tasksSlice";
-
-const reducer = combineReducers({
-  tasks: tasks.reducer,
-});
-
-const store = configureStore({ reducer });
+import { TodoList } from "./components/TodoList";
 
 export const App = () => {
   return (
     <Provider store={store}>
-      Your components can be mounted here, inside the Provider.
+      <TodoList />
     </Provider>
   );
 };
