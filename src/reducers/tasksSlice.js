@@ -44,7 +44,7 @@ export const tasks = createSlice({
   initialState,
   reducers: {
     addTask: (state, action) => {
-      console.log("task in reducer",action.payload);
+      console.log("task in reducer", action.payload);
       state.tasksList.push(action.payload);
     },
     removeTask: (state, { payload }) => {
@@ -63,4 +63,4 @@ export const tasks = createSlice({
   },
 });
 
-export const {addTask,removeTask} = tasks.actions;
+export const { addTask, removeTask, handleIsDone } = tasks.actions;
