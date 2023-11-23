@@ -54,21 +54,21 @@
 }
 
 @media screen and (min-width: 796px) {
-  .todoCard:last-of-type {
+  .todoCard {
     max-width: calc(50% - 1rem);
   }
 
-  .todoCard:first-of-type {
+  /* .todoCard:first-of-type {
     max-width: calc(50% - 1rem);
-  }
+  } */
 }
 
 @media screen and (min-width: 1178px) {
-  .todoCard:last-of-type {
+  .todoCard {
     max-width: calc(33% - 1rem);
   }
 
-  .todoCard:first-of-type {
+  /* .todoCard:first-of-type {
     max-width: calc(33% - 1rem);
-  }
+  } */
 }

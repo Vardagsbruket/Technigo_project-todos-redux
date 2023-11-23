@@ -4,16 +4,17 @@ import "./TodoList.css";
 
 export const TodoList = () => {
   const taskList = useSelector((state) => state.tasks.tasksList);
+  let incompleteTasks = 0;
 
   if (taskList) {
-    //console.log(taskList);
+    console.log(taskList);
+    incompleteTasks = taskList.reduce((acc, curr) => {
+      if (!curr.isDone) {
+        acc++;
+      }
+      return acc;
+    }, 0);
   }
-  const incompleteTasks = taskList.reduce((acc, curr) => {
-    if (!curr.isDone) {
-      acc++;
-    }
-    return acc;
-  }, 0);
 
   return (
     <main>
