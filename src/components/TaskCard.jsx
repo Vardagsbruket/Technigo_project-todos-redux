@@ -41,6 +41,13 @@ export const TaskCard = ({
     }
   };
 
+  const formattedDate = new Date(createdDate).toLocaleDateString();
+  const formattedDeadline = new Date(deadline).toLocaleDateString();
+  const isDeadlinePassed = createdDate > deadline;
+  const deadlineClass = isDeadlinePassed
+    ? "passed-deadline"
+    : "deadline-not-passed";
+
   return (
     <div className="todoCard">
       <div className="todoCardHeader">
@@ -64,8 +71,8 @@ export const TaskCard = ({
           </span>
         </div>
         <div className="todoCardDateInfo text-small">
-          <span>Deadline:{deadline}</span>
-          <span>Date:{createdDate}</span>
+          <span className={deadlineClass}>Deadline: {formattedDeadline}</span>
+          <span>Created: {formattedDate}</span>
         </div>
       </div>
     </div>

@@ -52,6 +52,12 @@
 .todoCardRemove svg {
   height: 1.5rem;
 }
+.passed-deadline {
+  color: red;
+}
+.deadline-not-passed {
+  color: green;
+}
 
 @media screen and (min-width: 796px) {
   .todoCard {
