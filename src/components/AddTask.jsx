@@ -31,6 +31,7 @@ export const AddTask = () => {
         isDone: false,
       })
     );
+    dispatch(closeModal());
   };
   const handleClick = () => {
     dispatch(closeModal());
@@ -80,7 +81,9 @@ export const AddTask = () => {
               <Category value={category} setSelectedCategory={selectCategory} />
             </div>
 
-            <button type="submit" className="submitButton">Save</button>
+            <button type="submit" className="submitButton">
+              Save
+            </button>
           </form>
         </div>
       </div>

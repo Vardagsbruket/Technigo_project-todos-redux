@@ -24,19 +24,19 @@ export const TaskCard = ({
   const taskList = useSelector((state) => state.tasks.tasksList);
   const getCategory = () => {
     switch (category) {
-      case "house":
+      case "House":
         return <IconHouse />;
         break;
-      case "shop":
+      case "Shop":
         return <IconShop />;
         break;
-      case "bill":
+      case "Bill":
         return <IconBill />;
         break;
-      case "garden":
+      case "Garden":
         return <IconGarden />;
         break;
-      case "other":
+      case "Other":
         return <IconOther />;
     }
   };
@@ -50,7 +50,7 @@ export const TaskCard = ({
           className="todoCardIsDone"
           onClick={() => dispatch(tasks.actions.handleIsDone(createdDate))}
         >
-          {isDone ? <IconUnCheck /> : <IconCheck />}
+          {isDone ? <IconCheck /> : <IconUnCheck />}
         </span>
       </div>
       <div className="todoCardComment">{comment}</div>

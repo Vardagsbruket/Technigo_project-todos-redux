@@ -6,7 +6,7 @@ export const TodoList = () => {
   const taskList = useSelector((state) => state.tasks.tasksList);
 
   if (taskList) {
-    console.log(taskList);
+    //console.log(taskList);
   }
   const incompleteTasks = taskList.reduce((acc, curr) => {
     if (!curr.isDone) {
