@@ -1,13 +1,13 @@
-import { IconTrash } from "../assets/icons";
-import { IconHouse } from "../assets/icons";
-import { IconBill } from "../assets/icons";
-import { IconShop } from "../assets/icons";
-import { IconOther } from "../assets/icons";
-import { IconGarden } from "../assets/icons";
-import { IconCheck } from "../assets/icons";
-import { IconUnCheck } from "../assets/icons";
+import { IconTrash } from "../assets/icons2";
+import { IconHouse } from "../assets/icons2";
+import { IconBill } from "../assets/icons2";
+import { IconShop } from "../assets/icons2";
+import { IconOther } from "../assets/icons2";
+import { IconGarden } from "../assets/icons2";
+import { IconCheck } from "../assets/icons2";
+import { IconUnCheck } from "../assets/icons2";
 import { tasks } from "../reducers/tasksSlice";
-import "./taskCard.css";
+import "./TaskCard.css";
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -24,19 +24,19 @@ export const TaskCard = ({
   const taskList = useSelector((state) => state.tasks.tasksList);
   const getCategory = () => {
     switch (category) {
-      case "house":
+      case "House":
         return <IconHouse />;
         break;
-      case "shop":
+      case "Shop":
         return <IconShop />;
         break;
-      case "bill":
+      case "Bill":
         return <IconBill />;
         break;
-      case "garden":
+      case "Garden":
         return <IconGarden />;
         break;
-      case "other":
+      case "Other":
         return <IconOther />;
     }
   };
@@ -46,8 +46,11 @@ export const TaskCard = ({
       <div className="todoCardHeader">
         {getCategory(category)}
         <span className="todoCardName">{name}</span>
-        <span className="todoCardIsDone">
-          {isDone ? <IconUnCheck /> : <IconCheck />}
+        <span
+          className="todoCardIsDone"
+          onClick={() => dispatch(tasks.actions.handleIsDone(createdDate))}
+        >
+          {isDone ? <IconCheck /> : <IconUnCheck />}
         </span>
       </div>
       <div className="todoCardComment">{comment}</div>

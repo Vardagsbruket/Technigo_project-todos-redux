@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem;
+}
+.header h1 {
+  margin: 0;
+  font-size: 38px;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.glyphicon {
+  position: 0;
+}
+
