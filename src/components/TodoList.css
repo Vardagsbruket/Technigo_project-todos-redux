@@ -15,3 +15,29 @@
   gap: 2rem;
   padding: 2rem;
 }
+
+/* Filter */
+
+.taskFilter {
+  text-align: center;
+}
+
+.taskFilter p {
+  cursor: pointer;
+}
+
+.filterMenu {
+  position: absolute;
+  background-color: var(--off-white);
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.filterMenu p {
+  cursor: pointer;
+  margin-bottom: 4rem;
+}
