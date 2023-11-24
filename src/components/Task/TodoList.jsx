@@ -47,9 +47,7 @@ export const TodoList = () => {
         setFilteredTasks(taskList.filter((task) => task.category === "Other"));
         break;
     }
-
-  }, [filterSelected, filteredTasks, taskList]);
-
+  }, [filterSelected, taskList]);
 
   return (
     <main>
