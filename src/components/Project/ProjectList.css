@@ -1,9 +1,9 @@
-.projectList{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 1;
-    gap: 2rem;
-    padding: 2rem;
-      
+.projectList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* flex: 1; */
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
 }

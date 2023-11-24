@@ -54,5 +54,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 1rem;
+}
+
+.projectCardFooter svg {
+  width: auto;
+  height: 1.5rem;
+}
+
+@media screen and (max-width: 667px) {
+  .projectCard {
+    min-width: 100%;
+  }
+  .projectList {
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 796px) {
+  .projectList .projectCard {
+    max-width: calc(50% - 1rem);
+  }
+
+  /* .todoCard:first-of-type {
+      max-width: calc(50% - 1rem);
+    } */
+}
+
+@media screen and (min-width: 1300px) {
+  .projectList .projectCard {
+    max-width: calc(33% - 1rem);
+  }
 }

@@ -8,7 +8,6 @@ import { closeModal } from "../../reducers/modelSlice";
 import { addProjectTask, projects } from "../../reducers/projectSlice";
 import "./AddTask.css";
 
-
 export const AddTask = () => {
   const [task, setTask] = useState("");
   const [comment, setComment] = useState("");
@@ -60,9 +59,7 @@ export const AddTask = () => {
       <div className="addTask">
         <div className="addTaskHeader">
           <h3>Add task</h3>
-          <button onClick={handleClick} className="close">
-            X
-          </button>
+          <span onClick={handleClick}>Close</span>
         </div>
         <div className="addTaskForm">
           <form onSubmit={handleSubmit}>
@@ -99,9 +96,7 @@ export const AddTask = () => {
               <Category value={category} setSelectedCategory={selectCategory} />
             </div>
 
-            <button type="submit" className="submitButton">
-              Save
-            </button>
+            <button type="submit">Save</button>
           </form>
         </div>
       </div>

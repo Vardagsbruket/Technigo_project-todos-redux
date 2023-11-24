@@ -1,13 +1,18 @@
 .header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin: 2rem;
+  padding: 1rem;
 }
 .header h1 {
   margin: 0;
   font-size: 38px;
 }
+
+/* .header button {
+  margin-left: 1rem;
+} */
 .logo {
   display: inline-flex;
   align-items: center;
@@ -17,5 +22,24 @@
   position: 0;
 }
 
-/* .addProject,.addTask{
-} */
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 721px) {
+  .header {
+    justify-content: center;
+    gap: 1rem;
+  }
+  .header .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .buttons button {
+    justify-content: center;
+    flex-basis: 100%;
+  }
+}

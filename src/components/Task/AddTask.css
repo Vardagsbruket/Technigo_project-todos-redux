@@ -12,19 +12,22 @@
 }
 
 .addTask {
-  background-color: var(--soft-main);
-
+  background-color: var(--pure-white);
+  color: var(--black);
   width: 100vw;
   max-width: 400px;
   border-radius: var(--radius);
 
   text-align: center;
-  border-right: 2px solid var(--softest-main);
-  border-bottom: 2px solid var(--softest-main);
   padding-bottom: 2rem;
 }
+
+.addTask select {
+  border: 1px solid var(--black);
+}
+
 .addTaskHeader {
-  background-color: var(--softest-main);
+  background-color: var(--soft-main);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +40,7 @@
 
 input {
   background-color: var(--pure-white);
+  border: 1px solid var(--black);
 }
 
 .submitButton {
