@@ -1,5 +1,5 @@
 export const Category = ({ value, setSelectedCategory }) => {
-  const categories = ["Shop", "House", "Bill", "Garden", "Other"];
+  const categories = ["Other", "Shop", "House", "Bill", "Garden"];
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);

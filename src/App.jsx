@@ -9,12 +9,11 @@ import { AddProject } from "./components/Project/AddProject";
 
 export const App = () => {
   const isOpen = useSelector((state) => state.model.isOpen);
-  const isProjectOpen = useSelector((state) => state.model.isProjectOpen)
+  const isProjectOpen = useSelector((state) => state.model.isProjectOpen);
   return (
     <div>
       {isOpen && <AddTask />}
       {isProjectOpen && <AddProject />}
-
       <Header />
       <TodoList />
       <ProjectList />

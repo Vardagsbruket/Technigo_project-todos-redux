@@ -1,12 +1,17 @@
 import { useSelector } from "react-redux";
 import { TaskCard } from "./TaskCard";
 import { IconFilter } from "../../assets/icons2";
+import { updateLocalStorage } from "../../reducers/tasksSlice";
+import { useDispatch } from "react-redux";
+
 import "./TodoList.css";
 import { useEffect, useState } from "react";
+import { EmptyList } from "../EmptyList";
 
 export const TodoList = () => {
   const [filteredTasks, setFilteredTasks] = useState(null);
   const [filterSelected, setFilterSelected] = useState("all");
+  const dispatch = useDispatch();
   const taskList = useSelector((state) => state.tasks.tasksList);
   let incompleteTasks = 0;
 
@@ -49,10 +54,14 @@ export const TodoList = () => {
     }
   }, [filterSelected, taskList]);
 
+  useEffect(() => {
+    dispatch(updateLocalStorage());
+  }, [taskList]);
+
   return (
     <main>
       <section className="taskCount">
-        <p>Number of tasks: {taskList.length}</p>
+        <p>Number of tasks: {taskList?.length}</p>
         <p>Incomplete tasks: {incompleteTasks}</p>
       </section>
       <section className="taskFilter">
@@ -77,6 +86,7 @@ export const TodoList = () => {
         </form>
       </section>
       <section className="todoList">
+        {taskList.length < 1 && <EmptyList type={"tasks"} />}
         {filteredTasks?.map((task) => (
           <TaskCard
             createdDate={task.createdDate}

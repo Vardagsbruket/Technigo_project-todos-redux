@@ -12,14 +12,13 @@ export const AddTask = () => {
   const [task, setTask] = useState("");
   const [comment, setComment] = useState("");
   const [deadline, setDeadline] = useState(new Date());
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Other");
   const addProjTask = useSelector((state) => state.projects.addProjectTasks);
 
   const dispatch = useDispatch();
 
   const selectCategory = (value) => {
     setCategory(value);
-    console.log("category selected");
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -71,6 +70,7 @@ export const AddTask = () => {
                 name="task"
                 value={task}
                 onChange={(e) => setTask(e.target.value)}
+                required
               />
             </div>
             <div className="comment">

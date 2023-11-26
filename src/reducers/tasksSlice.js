@@ -1,43 +1,19 @@
 // Example from instructions pasted below
 
 import { createSlice } from "@reduxjs/toolkit";
+
+const getTasksFromLocalStorage = () => {
+  const storedTasks = localStorage.getItem("tasksList");
+  const emptyList = [];
+  if (storedTasks) {
+    return JSON.parse(storedTasks);
+  } else {
+    return emptyList;
+  }
+};
+
 const initialState = {
-  tasksList: [
-    {
-      createdDate: 1700729781605,
-      name: "Watch video on actions & reducers",
-      comment: "Do it properly",
-      deadline: "",
-      category: "house",
-      isDone: true,
-    },
-    {
-      createdDate: 1700729871043,
-      name: "Follow redux code along",
-      comment: "Do it properly",
-      deadline: "",
-      category: "garden",
-      isDone: false,
-    },
-    {
-      createdDate: 17007298713893,
-      name: "Fork weekly assignment",
-      comment: "Do it properly",
-      deadline: "",
-      category: "bill",
-      isDone: true,
-    },
-    {
-      createdDate: 1700869871043,
-      name: "Create a todo app",
-      comment: "Do it properly",
-      deadline: "",
-      category: "shop",
-      isDone: false,
-    },
-  ],
-  
-  menuActive: false,
+  tasksList: getTasksFromLocalStorage(),
 };
 
 export const tasks = createSlice({
@@ -58,15 +34,23 @@ export const tasks = createSlice({
       if (task) {
         task.isDone = !task.isDone;
       }
-      //console.log(task);
     },
-    completeAllTasks: (state) =>{
-      state.tasksList.map((task)=>{
+    completeAllTasks: (state) => {
+      state.tasksList.map((task) => {
         task.isDone = true;
-      })
-
+      });
+    },
+    updateLocalStorage: (state) => {
+      const localStore = JSON.stringify(state.tasksList);
+      localStorage.setItem("tasksList", localStore);
     },
   },
 });
 
-export const { addTask, removeTask, handleIsDone,completeAllTasks } = tasks.actions;
+export const {
+  addTask,
+  removeTask,
+  handleIsDone,
+  completeAllTasks,
+  updateLocalStorage,
+} = tasks.actions;
